@@ -1,0 +1,55 @@
+Login to AWS EC2 instance 
+launch Ubuntu 
+storage 20 
+Tag Webserver 
+Security group : Http SSH
+sudo apt update -y 
+sudo apt upgrade
+
+Set up LAMP SERVER
+Linus Apache Mysql PHP
+
+sudo apt install apache2
+sudo systemctl status apache2
+
+Check the web-browser
+sudo systemclt start apache2
+sudo systemclt enable apache2 (service will be running after )
+
+Sudo apt  install mariadb-server mariadb-client -y
+configure
+
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+
+Root password 
+sudo mysql_secure_installation
+Y
+root password 
+
+sudo systemctl restart mariadb
+
+Install php
+sudo apt install php php-mysql php-gd php-cli php-common -y
+
+download wordpress
+
+sudo apt install weget unzip -y
+sudo weget <url of wordpress>
+sudo unzip <filename>
+sudo cp -r wordpress/* /var/www/html/
+goto the CD /var/www/html
+
+Change ownership
+sudo chown www-data:www-data -R /var/www/html/
+
+sudo rm -rf index.html
+
+Database
+sudo mysql -u root -p
+
+create database webapp_name;
+CREATE USER web@app IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'web@app'@localhost IDENTIFIED BY 'pasword';
+exit
+
